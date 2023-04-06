@@ -1,0 +1,63 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+	<MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
+	<MvcRazorExcludeRefAssembliesFromPublish>false</MvcRazorExcludeRefAssembliesFromPublish>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Templates\IdoszakHibak.cshtml" />
+    <None Remove="Templates\SzamitogepHibak.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Templates\IdoszakHibak.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\SzamitogepHibak.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FreeSpire.Doc" Version="10.8.0" />
+    <PackageReference Include="Haukcode.WkHtmlToPdfDotNet" Version="1.5.86" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="7.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="7.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.2" />
+    <PackageReference Include="RazorLight" Version="2.3.1" />
+    <PackageReference Include="XAct.Core.PCL" Version="0.0.5014" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SzamitogepNyilvantarto.Data\SzamitogepNyilvantarto.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

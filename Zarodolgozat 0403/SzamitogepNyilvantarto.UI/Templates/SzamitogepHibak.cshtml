@@ -1,0 +1,115 @@
+﻿@model List<SzamitogepNyilvantarto.Data.Entities.Hiba>
+
+<html>
+	<head>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<h1>@Model[0].HibasGep.Azonosito azonosítójú számítógép</h1>
+		<h2>Jelenlegi konfigurációja:</h2>
+		<table>
+			<tr>
+				<th>
+					Processzor:
+				</th>
+				<td>
+					@Model[0].HibasGep.Processzor
+				</td>
+			</tr>
+			<tr>
+				<th>
+					Memória típusa:
+				</th>
+				<td>
+					@Model[0].HibasGep.MemoriaTipusa
+				</td>
+			</tr>
+			<tr>
+				<th>
+					Memória mérete:
+				</th>
+				<td>
+					@Model[0].HibasGep.MemoriaMerete
+				</td>
+			</tr>
+			<tr>
+				<th>
+					Háttértár típusa:
+				</th>
+				<td>
+					@Model[0].HibasGep.HattertarTipusa
+				</td>
+			</tr>
+			<tr>
+				<th>
+					Hátttértár mérete:
+				</th>
+				<td>
+					@Model[0].HibasGep.HatertarMerete
+				</td>
+			</tr>
+			<tr>
+				<th>
+					Állapot / Terem:
+				</th>
+				<td>
+					@Model[0].HibasGep.Allapot.Elnevezes / @Model[0].HibasGep.Terem
+				</td>
+			</tr>
+		</table>
+		<h2>Hibái:</h2>
+		<table>
+			<tr>
+				<th>
+					Bejelentés dátuma
+				</th>
+				<th>
+					Hiba leírása
+				</th>
+				<th>
+					Csere számítógép azonosítója
+				</th>
+				<th>
+					Visszakerülés dátuma
+				</th>
+				<th>
+					Javítás leírása
+				</th>
+				<th>
+					Számítógép akkori terme
+				</th>
+				<th>
+					Hiba állapota
+				</th>
+			</tr>
+			<tr>
+				@foreach (var hiba in Model)
+			{
+				<td>
+					@hiba.BejelentesDatum
+				</td>
+				<td>
+					@hiba.HibaLeiras
+				</td>
+				<td>
+					@hiba.CsereGep?.Azonosito
+				</td>
+				<td>
+					@hiba.VisszakerulesDatum
+				</td>
+				<td>
+					@hiba.JavitasLeiras
+				</td>
+				<td>
+					@hiba.Terem
+				</td>
+				<td>
+					@hiba.Allapot.Elnevezes
+				</td>
+			}
+			</tr>
+		</table>
+	</body>
+</html>

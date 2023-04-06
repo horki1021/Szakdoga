@@ -1,0 +1,205 @@
+﻿namespace SzamitogepNyilvantarto.UI.MenuControls.Szamitogep;
+
+public partial class SzamitogepForm : Form
+{
+    private List<Allapot> allapotok = new List<Allapot>()
+    {
+        new Allapot{Id=0, Elnevezes="Kérem válasszon..."}
+    };
+    private SzamitogepViewModel model=null;
+
+    public delegate void SzamitogepDelegate(SzamitogepViewModel model);
+
+    public static event SzamitogepDelegate SzamitogepAdded;
+    public static event SzamitogepDelegate SzamitogepUpdated;
+
+    private delegate void Action();
+    private Action action;
+    public SzamitogepForm()
+    {
+        InitializeComponent();
+        model= new SzamitogepViewModel();
+        LoadAllapot();
+        FillComboBox();
+        action = AddSzamitogep;
+    }
+
+    public SzamitogepForm(SzamitogepViewModel model)
+    {
+        InitializeComponent();
+        this.model = model;
+        LoadAllapot(model.AllapotId);
+        FillComboBox();
+        PutDataInControls();
+        action = UpdateSzamitogep;
+        this.Text = "Számítógép módosítása";
+    }
+
+    private void LoadAllapot()
+    {
+        using AppDbContext context = new AppDbContext();
+        allapotok.AddRange(context.Allapotok.Where(x=>x.Id==1 || x.Id==2).ToList());
+    }
+
+    private void LoadAllapot(int allapotid)
+    {
+        using AppDbContext context = new AppDbContext();
+        allapotok.AddRange(context.Allapotok.Where(x => x.Id == allapotid).ToList());
+    }
+
+    private void FillComboBox()
+    {
+        comboBoxAllapot.DataSource = allapotok;
+        comboBoxAllapot.DisplayMember = "Elnevezes";
+        comboBoxAllapot.ValueMember = "Id";
+    }
+
+    private void AllapotSelectedChange(object sender, EventArgs e)
+    {
+        if(comboBoxAllapot.SelectedValue is Allapot)
+        {
+            return;
+        }
+        if (((int)comboBoxAllapot.SelectedValue) == 1 || ((int)comboBoxAllapot.SelectedValue) == 0)
+        {
+            textBoxTerem.Enabled = true;
+            textBoxTerem.Text = string.Empty;
+        }
+        else
+        {
+            textBoxTerem.Enabled = false;
+            if((int)comboBoxAllapot.SelectedValue == 4)
+            {
+                textBoxTerem.Text = "Szervíz";
+            }
+            else
+            {
+                textBoxTerem.Text = "Raktár";
+            }
+        }
+    }
+
+    private void CollectData()
+    {
+        model.Azonosito = textBoxAzonosito.Text;
+        model.Processzor = textBoxProcesszor.Text;
+        model.MemoriaTipusa = textBoxMemoriaTipus.Text;
+        model.MemoriaMerete = numericTextBoxMemoriaMeret.IntValue == null ?
+                              -1:(int)numericTextBoxMemoriaMeret.IntValue;
+        model.HattertarTipusa = textBoxHattertarTipus.Text;
+        model.HatertarMerete = numericTextBoxHattertarMeret.IntValue == null ? 
+                               -1 : (int)numericTextBoxHattertarMeret.IntValue;
+        model.Terem = textBoxTerem.Text;
+        model.AllapotId = (int)comboBoxAllapot.SelectedValue;
+        model.AllapotElnevezes = comboBoxAllapot.Text;
+    }
+
+    private void PutDataInControls()
+    {
+        textBoxAzonosito.Text= model.Azonosito;
+        textBoxProcesszor.Text= model.Processzor;
+        textBoxMemoriaTipus.Text = model.MemoriaTipusa;
+        numericTextBoxMemoriaMeret.IntValue = model.MemoriaMerete;
+        textBoxHattertarTipus.Text = model.HattertarTipusa;
+        numericTextBoxHattertarMeret.IntValue = model.HatertarMerete;
+        textBoxTerem.Text = model.Terem;
+        comboBoxAllapot.SelectedValue = model.AllapotId;
+    }
+
+    private void ShowErrors(Dictionary<string, string> errors)
+    {
+        labelErrorAzonosito.Text = errors.GetValueOrDefault(nameof(SzamitogepViewModel.Azonosito));
+        labelErrorProcesszor.Text = errors.GetValueOrDefault(nameof(SzamitogepViewModel.Processzor));
+        labelErrorMemoriaTipus.Text = errors.GetValueOrDefault(nameof(SzamitogepViewModel.MemoriaTipusa));
+        labelErrorMemoriaMeret.Text = errors.GetValueOrDefault(nameof(SzamitogepViewModel.MemoriaMerete));
+        labelErrorHattertarTipus.Text = errors.GetValueOrDefault(nameof(SzamitogepViewModel.HattertarTipusa));
+        labelErrorHattertarMeret.Text = errors.GetValueOrDefault(nameof(SzamitogepViewModel.HatertarMerete));
+        labelErrorTerem.Text = errors.GetValueOrDefault(nameof(SzamitogepViewModel.Terem));
+        labelErrorAllapot.Text = errors.GetValueOrDefault(nameof(SzamitogepViewModel.AllapotId));
+    }
+
+    private bool IsSzamitogepExists()
+    {
+        using AppDbContext context = new AppDbContext();
+        int db = context.Szamitogepek.Count(x => x.Id != model.Id && x.Azonosito.ToLower() == model.Azonosito.ToLower());
+
+        if (db != 0)
+        {
+            MessageBox.Show($"{model.Azonosito} azonosítójú számítógép már létezik.");
+            return true;
+        }
+
+        return false;
+    }
+
+    private void AddSzamitogep()
+    {
+        CollectData();
+        ModelValidationResult validationResult = model.Validate();
+        ShowErrors(validationResult.Errors);
+        if (!validationResult.IsValid) 
+        {
+            return;
+        }
+
+        if(IsSzamitogepExists())
+        {
+            return;
+        }
+        try
+        {
+            using AppDbContext context = new AppDbContext();
+            SzamitogepNyilvantarto.Data.Entities.Szamitogep entity = model.ToEntity();
+            context.Szamitogepek.Add(entity);
+            context.SaveChanges();
+            model.Id = entity.Id;
+
+            SzamitogepAdded?.Invoke(model);
+            this.Close();
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Hiba a mentés közben!", "Figyelem", MessageBoxButtons.OK);
+            return;
+        }
+    }
+
+    private void UpdateSzamitogep()
+    {
+        CollectData();
+
+        using AppDbContext context = new AppDbContext();
+        SzamitogepNyilvantarto.Data.Entities.Szamitogep entity = context.Szamitogepek.Find(model.Id);
+
+        ModelValidationResult validationResult = model.Validate();
+        ShowErrors(validationResult.Errors);
+        if (!validationResult.IsValid)
+        {
+            return;
+        }
+
+        if (IsSzamitogepExists())
+        {
+            return;
+        }
+
+        try
+        {
+            model.ToEntity(entity);
+            context.Szamitogepek.Update(entity);
+            context.SaveChanges();
+            SzamitogepUpdated?.Invoke(model);
+            this.Close();
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Hiba a mentés közben!", "Figyelem", MessageBoxButtons.OK);
+            return;
+        }
+    }
+
+    private void OK_Click(object sender, EventArgs e)
+    {
+        action();
+    }
+}

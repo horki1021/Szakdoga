@@ -1,0 +1,13 @@
+﻿global using System;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Text;
+global using System.Threading.Tasks;
+global using System.ComponentModel.DataAnnotations.Schema;
+global using System.ComponentModel.DataAnnotations;
+global using SzamitogepNyilvantarto.Data.Entities;
+global using System.Globalization;
+global using SzamitogepNyilvantarto.Data;
+global using SzamitogepNyilvantarto.UI.ViewModels;
+global using static SzamitogepNyilvantarto.UI.Extensions.ObjectExtensions;
+global using Microsoft.EntityFrameworkCore;

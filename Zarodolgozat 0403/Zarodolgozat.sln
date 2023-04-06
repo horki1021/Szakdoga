@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SzamitogepNyilvantarto.UI", "SzamitogepNyilvantarto.UI\SzamitogepNyilvantarto.UI.csproj", "{728C2251-CC6A-4F6D-9424-559FC2F8E238}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SzamitogepNyilvantarto.Data", "SzamitogepNyilvantarto.Data\SzamitogepNyilvantarto.Data.csproj", "{63AD4F49-6B90-445D-9662-493DC8945216}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{728C2251-CC6A-4F6D-9424-559FC2F8E238}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{728C2251-CC6A-4F6D-9424-559FC2F8E238}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{728C2251-CC6A-4F6D-9424-559FC2F8E238}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{728C2251-CC6A-4F6D-9424-559FC2F8E238}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63AD4F49-6B90-445D-9662-493DC8945216}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63AD4F49-6B90-445D-9662-493DC8945216}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63AD4F49-6B90-445D-9662-493DC8945216}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63AD4F49-6B90-445D-9662-493DC8945216}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {743379D4-94ED-461F-945C-415275B34DB6}
+	EndGlobalSection
+EndGlobal
