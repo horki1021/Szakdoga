@@ -6,7 +6,7 @@ namespace SzamitogepNyilvantarto.UI.DocumentGenerators
 {
     public class PdfGenerator:IDocumentGenerator
     {
-        public async Task GenerateDocumentAsync(string templateName, object model, string fileName)
+        public async Task GenerateDocumentAsync(string templateName, object model, string fileName, WkHtmlToPdfDotNet.Orientation orientation = WkHtmlToPdfDotNet.Orientation.Portrait)
         {
                 var rootDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
                 var templateFullPath = Path.Combine(rootDir, "Templates");
@@ -20,7 +20,7 @@ namespace SzamitogepNyilvantarto.UI.DocumentGenerators
                 {
                     GlobalSettings = {
                 ColorMode = ColorMode.Color,
-                Orientation = WkHtmlToPdfDotNet.Orientation.Portrait,
+                Orientation = orientation,
                 PaperSize = PaperKind.A4,
                 Margins = new MarginSettings() { Top = 10 }
             },

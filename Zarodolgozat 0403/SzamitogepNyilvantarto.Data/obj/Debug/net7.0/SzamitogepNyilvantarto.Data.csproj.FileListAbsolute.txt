@@ -46,3 +46,19 @@ C:\Users\Kinga\Desktop\Zarodolgozat\SzamitogepNyilvantarto.Data\obj\Debug\net7.0
 C:\Users\Kinga\Desktop\Zarodolgozat\SzamitogepNyilvantarto.Data\obj\Debug\net7.0\SzamitogepNyilvantarto.Data.pdb
 C:\Users\Kinga\Desktop\Zarodolgozat\SzamitogepNyilvantarto.Data\obj\Debug\net7.0\SzamitogepNyilvantarto.Data.genruntimeconfig.cache
 C:\Users\Kinga\Desktop\Zarodolgozat\SzamitogepNyilvantarto.Data\obj\Debug\net7.0\ref\SzamitogepNyilvantarto.Data.dll
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.Data\bin\Debug\net7.0\runtimes\win-x64\native\wkhtmltox.dll
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.Data\bin\Debug\net7.0\runtimes\win-x86\native\wkhtmltox.dll
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.Data\bin\Debug\net7.0\SzamitogepNyilvantarto.Data.deps.json
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.Data\bin\Debug\net7.0\SzamitogepNyilvantarto.Data.runtimeconfig.json
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.Data\bin\Debug\net7.0\SzamitogepNyilvantarto.Data.dll
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.Data\bin\Debug\net7.0\SzamitogepNyilvantarto.Data.pdb
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.Data\obj\Debug\net7.0\SzamitogepNyilvantarto.Data.csproj.AssemblyReference.cache
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.Data\obj\Debug\net7.0\SzamitogepNyilvantarto.Data.GeneratedMSBuildEditorConfig.editorconfig
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.Data\obj\Debug\net7.0\SzamitogepNyilvantarto.Data.AssemblyInfoInputs.cache
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.Data\obj\Debug\net7.0\SzamitogepNyilvantarto.Data.AssemblyInfo.cs
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.Data\obj\Debug\net7.0\SzamitogepNyilvantarto.Data.csproj.CoreCompileInputs.cache
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.Data\obj\Debug\net7.0\SzamitogepNyilvantarto.Data.dll
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.Data\obj\Debug\net7.0\refint\SzamitogepNyilvantarto.Data.dll
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.Data\obj\Debug\net7.0\SzamitogepNyilvantarto.Data.pdb
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.Data\obj\Debug\net7.0\SzamitogepNyilvantarto.Data.genruntimeconfig.cache
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.Data\obj\Debug\net7.0\ref\SzamitogepNyilvantarto.Data.dll

@@ -72,5 +72,6 @@ namespace SzamitogepNyilvantarto.UI.MenuControls
                 MessageBox.Show("Az alapérelmezett fájl kiterjesztés megváltoztatása nem sikerült", "Figyelem", MessageBoxButtons.OK);
             }
         }
-    }
+
+	}
 }

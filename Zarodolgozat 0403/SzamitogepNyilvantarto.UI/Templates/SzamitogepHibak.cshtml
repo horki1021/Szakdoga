@@ -84,9 +84,9 @@
 					Hiba állapota
 				</th>
 			</tr>
-			<tr>
 				@foreach (var hiba in Model)
 			{
+			<tr>
 				<td>
 					@hiba.BejelentesDatum
 				</td>
@@ -108,8 +108,9 @@
 				<td>
 					@hiba.Allapot.Elnevezes
 				</td>
-			}
 			</tr>
+			}
+
 		</table>
 	</body>
 </html>

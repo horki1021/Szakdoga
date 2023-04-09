@@ -1272,3 +1272,20 @@ C:\Users\Kinga\Desktop\Zarodolgozat\SzamitogepNyilvantarto.UI\obj\Debug\net7.0-w
 C:\Users\Kinga\Desktop\Zarodolgozat\SzamitogepNyilvantarto.UI\obj\Debug\net7.0-windows\SzamitogepNyilvantarto.UI.pdb
 C:\Users\Kinga\Desktop\Zarodolgozat\SzamitogepNyilvantarto.UI\obj\Debug\net7.0-windows\SzamitogepNyilvantarto.UI.genruntimeconfig.cache
 C:\Users\Kinga\Desktop\Zarodolgozat\SzamitogepNyilvantarto.UI\obj\Debug\net7.0-windows\ref\SzamitogepNyilvantarto.UI.dll
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.UI\obj\Debug\net7.0-windows\SzamitogepNyilvantarto.UI.csproj.AssemblyReference.cache
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.UI\obj\Debug\net7.0-windows\SzamitogepNyilvantarto.UI.MainForm.resources
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.UI\obj\Debug\net7.0-windows\SzamitogepNyilvantarto.UI.MenuControls.BaseControl.resources
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.UI\obj\Debug\net7.0-windows\SzamitogepNyilvantarto.UI.MenuControls.BeallitasokForm.resources
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.UI\obj\Debug\net7.0-windows\SzamitogepNyilvantarto.UI.MenuControls.BejelentkezesForm.resources
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.UI\obj\Debug\net7.0-windows\SzamitogepNyilvantarto.UI.MenuControls.Hiba.HibaControl.resources
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.UI\obj\Debug\net7.0-windows\SzamitogepNyilvantarto.UI.MenuControls.Hiba.HibaForm.resources
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.UI\obj\Debug\net7.0-windows\SzamitogepNyilvantarto.UI.MenuControls.Reports.IdoszakHibakForm.resources
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.UI\obj\Debug\net7.0-windows\SzamitogepNyilvantarto.UI.MenuControls.Reports.SzamitogepHibakForm.resources
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.UI\obj\Debug\net7.0-windows\SzamitogepNyilvantarto.UI.MenuControls.Szamitogep.SzamitogepControl.resources
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.UI\obj\Debug\net7.0-windows\SzamitogepNyilvantarto.UI.MenuControls.Szamitogep.SzamitogepForm.resources
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.UI\obj\Debug\net7.0-windows\SzamitogepNyilvantarto.UI.Properties.Resources.resources
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.UI\obj\Debug\net7.0-windows\SzamitogepNyilvantarto.UI.csproj.GenerateResource.cache
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.UI\obj\Debug\net7.0-windows\SzamitogepNyilvantarto.UI.GeneratedMSBuildEditorConfig.editorconfig
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.UI\obj\Debug\net7.0-windows\SzamitogepNyilvantarto.UI.AssemblyInfoInputs.cache
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.UI\obj\Debug\net7.0-windows\SzamitogepNyilvantarto.UI.AssemblyInfo.cs
+F:\Zarodolgozat 0403\SzamitogepNyilvantarto.UI\obj\Debug\net7.0-windows\SzamitogepNyilvantarto.UI.csproj.CoreCompileInputs.cache

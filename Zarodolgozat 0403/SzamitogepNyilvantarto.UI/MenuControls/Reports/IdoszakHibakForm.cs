@@ -32,10 +32,8 @@ namespace SzamitogepNyilvantarto.UI.MenuControls.Reports
             using AppDbContext context = new AppDbContext();
             List<SzamitogepNyilvantarto.Data.Entities.Hiba> viewModel = context.Hibak.Include(x => x.Allapot)
                                                                                         .Include(x => x.HibasGep)
-                                                                                        .ThenInclude(x => x.Allapot)
                                                                                         .Include(x => x.CsereGep)
-                                                                                        .ThenInclude(x => x.Allapot)
-                                                                                        .Where(x=>x.BejelentesDatum>=dateTimePickerKezdet.Value.Date || x.BejelentesDatum <= dateTimePickerVeg.Value.Date)
+                                                                                        .Where(x => x.BejelentesDatum.Date >= dateTimePickerKezdet.Value.Date && x.BejelentesDatum.Date <= dateTimePickerVeg.Value.Date)
                                                                                         .ToList();
             if (!viewModel.Any())
             {

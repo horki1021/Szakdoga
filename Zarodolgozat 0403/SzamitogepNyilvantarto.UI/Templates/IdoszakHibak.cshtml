@@ -1,4 +1,5 @@
-﻿<html>
+﻿@model List<SzamitogepNyilvantarto.Data.Entities.Hiba>
+<html>
 	<head>
 		<style>
 
@@ -32,9 +33,9 @@
 					Hiba állapota
 				</th>
 			</tr>
-			<tr>
-				@foreach (var hiba in Model)
+			@foreach (var hiba in Model)
 			{
+			<tr>
 				<td>
 					@hiba.HibasGep.Azonosito
 				</td>
@@ -45,7 +46,7 @@
 					@hiba.HibaLeiras
 				</td>
 				<td>
-					@hiba.CsereGep.Azonosito
+					@hiba.CsereGep?.Azonosito
 				</td>
 				<td>
 					@hiba.VisszakerulesDatum
@@ -59,8 +60,8 @@
 				<td>
 					@hiba.Allapot.Elnevezes
 				</td>
-			}
 			</tr>
+			}
 		</table>
 	</body>
 </html>

@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kinga\\Desktop\\Zarodolgozat\\SzamitogepNyilvantarto.UI\\SzamitogepNyilvantarto.UI.csproj": {}
+    "F:\\Zarodolgozat 0403\\SzamitogepNyilvantarto.UI\\SzamitogepNyilvantarto.UI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kinga\\Desktop\\Zarodolgozat\\SzamitogepNyilvantarto.Data\\SzamitogepNyilvantarto.Data.csproj": {
+    "F:\\Zarodolgozat 0403\\SzamitogepNyilvantarto.Data\\SzamitogepNyilvantarto.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kinga\\Desktop\\Zarodolgozat\\SzamitogepNyilvantarto.Data\\SzamitogepNyilvantarto.Data.csproj",
+        "projectUniqueName": "F:\\Zarodolgozat 0403\\SzamitogepNyilvantarto.Data\\SzamitogepNyilvantarto.Data.csproj",
         "projectName": "SzamitogepNyilvantarto.Data",
-        "projectPath": "C:\\Users\\Kinga\\Desktop\\Zarodolgozat\\SzamitogepNyilvantarto.Data\\SzamitogepNyilvantarto.Data.csproj",
-        "packagesPath": "C:\\Users\\Kinga\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kinga\\Desktop\\Zarodolgozat\\SzamitogepNyilvantarto.Data\\obj\\",
+        "projectPath": "F:\\Zarodolgozat 0403\\SzamitogepNyilvantarto.Data\\SzamitogepNyilvantarto.Data.csproj",
+        "packagesPath": "C:\\Users\\sz2horkin\\.nuget\\packages\\",
+        "outputPath": "F:\\Zarodolgozat 0403\\SzamitogepNyilvantarto.Data\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Kinga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sz2horkin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -105,17 +110,21 @@
         }
       }
     },
-    "C:\\Users\\Kinga\\Desktop\\Zarodolgozat\\SzamitogepNyilvantarto.UI\\SzamitogepNyilvantarto.UI.csproj": {
+    "F:\\Zarodolgozat 0403\\SzamitogepNyilvantarto.UI\\SzamitogepNyilvantarto.UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kinga\\Desktop\\Zarodolgozat\\SzamitogepNyilvantarto.UI\\SzamitogepNyilvantarto.UI.csproj",
+        "projectUniqueName": "F:\\Zarodolgozat 0403\\SzamitogepNyilvantarto.UI\\SzamitogepNyilvantarto.UI.csproj",
         "projectName": "SzamitogepNyilvantarto.UI",
-        "projectPath": "C:\\Users\\Kinga\\Desktop\\Zarodolgozat\\SzamitogepNyilvantarto.UI\\SzamitogepNyilvantarto.UI.csproj",
-        "packagesPath": "C:\\Users\\Kinga\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kinga\\Desktop\\Zarodolgozat\\SzamitogepNyilvantarto.UI\\obj\\",
+        "projectPath": "F:\\Zarodolgozat 0403\\SzamitogepNyilvantarto.UI\\SzamitogepNyilvantarto.UI.csproj",
+        "packagesPath": "C:\\Users\\sz2horkin\\.nuget\\packages\\",
+        "outputPath": "F:\\Zarodolgozat 0403\\SzamitogepNyilvantarto.UI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Kinga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sz2horkin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -123,14 +132,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0-windows7.0": {
             "targetAlias": "net7.0-windows",
             "projectReferences": {
-              "C:\\Users\\Kinga\\Desktop\\Zarodolgozat\\SzamitogepNyilvantarto.Data\\SzamitogepNyilvantarto.Data.csproj": {
-                "projectPath": "C:\\Users\\Kinga\\Desktop\\Zarodolgozat\\SzamitogepNyilvantarto.Data\\SzamitogepNyilvantarto.Data.csproj"
+              "F:\\Zarodolgozat 0403\\SzamitogepNyilvantarto.Data\\SzamitogepNyilvantarto.Data.csproj": {
+                "projectPath": "F:\\Zarodolgozat 0403\\SzamitogepNyilvantarto.Data\\SzamitogepNyilvantarto.Data.csproj"
               }
             }
           }
