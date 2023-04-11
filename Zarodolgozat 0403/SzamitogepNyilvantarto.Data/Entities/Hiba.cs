@@ -11,11 +11,12 @@ public class Hiba
     [Required]
     public DateTime BejelentesDatum { get; set; }
 
-    [Required]
-    [MaxLength(500)]
+    [Required(ErrorMessage = "Kötelező megadni!")]
+	[MaxLength(500, ErrorMessage = "Túl hosszú!")]
     public string HibaLeiras { get; set; }
 
-    public string? JavitasLeiras { get; set; }
+	[MaxLength(500, ErrorMessage = "Túl hosszú!")]
+	public string? JavitasLeiras { get; set; }
 
     public DateTime? VisszakerulesDatum { get; set; }
 
@@ -30,7 +31,7 @@ public class Hiba
 
     [ForeignKey("Szamitogepek")]
     [Required]
-    [Range(1, int.MaxValue, ErrorMessage ="Kötelező megadni")]
+    [Range(1, int.MaxValue, ErrorMessage ="Kötelező megadni!")]
     public int HibasGepId { get; set; }
 
     public virtual Szamitogep HibasGep { get; set; }

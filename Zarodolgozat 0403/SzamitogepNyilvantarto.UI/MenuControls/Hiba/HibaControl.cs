@@ -80,23 +80,6 @@ public partial class HibaControl : BaseControl
         form.ShowDialog();
     }
 
-    protected override void OnDeleteClick(object sender, EventArgs e)
-    {
-        HibaViewModel model = (HibaViewModel)adapter.Current;
-        if (model == null)
-        {
-            MessageBox.Show("Jelöljön ki egy hibát!", "Figyelem!", MessageBoxButtons.OK);
-            return;
-        }
-        using AppDbContext context = new AppDbContext();
-        SzamitogepNyilvantarto.Data.Entities.Hiba entity = context.Hibak.Find(model.Id);
-        context.Hibak.Remove(entity);
-        context.SaveChanges();
-
-        int index = adapter.IndexOf(model);
-        adapter.RemoveAt(index);
-    }
-
     protected override void OnUpdateClick(object sender, EventArgs e)
     {
         HibaViewModel model = (HibaViewModel)adapter.Current;

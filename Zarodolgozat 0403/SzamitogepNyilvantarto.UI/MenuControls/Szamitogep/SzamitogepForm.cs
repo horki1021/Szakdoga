@@ -15,7 +15,7 @@ public partial class SzamitogepForm : Form
 
     private delegate void Action();
     private Action action;
-    public SzamitogepForm()
+    public SzamitogepForm()// számítógép hozzáadása
     {
         InitializeComponent();
         model= new SzamitogepViewModel();
@@ -24,7 +24,7 @@ public partial class SzamitogepForm : Form
         action = AddSzamitogep;
     }
 
-    public SzamitogepForm(SzamitogepViewModel model)
+    public SzamitogepForm(SzamitogepViewModel model) //számítógép módosítása
     {
         InitializeComponent();
         this.model = model;
@@ -35,26 +35,26 @@ public partial class SzamitogepForm : Form
         this.Text = "Számítógép módosítása";
     }
 
-    private void LoadAllapot()
+    private void LoadAllapot() // állapodok kigyüjtése (használatban és használatra kész)
     {
         using AppDbContext context = new AppDbContext();
         allapotok.AddRange(context.Allapotok.Where(x=>x.Id==1 || x.Id==2).ToList());
     }
 
-    private void LoadAllapot(int allapotid)
+    private void LoadAllapot(int allapotid)//állapot kigyüjtése a módosításhoz
     {
         using AppDbContext context = new AppDbContext();
         allapotok.AddRange(context.Allapotok.Where(x => x.Id == allapotid).ToList());
     }
 
-    private void FillComboBox()
+    private void FillComboBox() //állapot legördülő lista feltöltése
     {
         comboBoxAllapot.DataSource = allapotok;
         comboBoxAllapot.DisplayMember = "Elnevezes";
         comboBoxAllapot.ValueMember = "Id";
     }
 
-    private void AllapotSelectedChange(object sender, EventArgs e)
+    private void AllapotSelectedChange(object sender, EventArgs e)//terem változtatása az állapot alapján
     {
         if(comboBoxAllapot.SelectedValue is Allapot)
         {
@@ -79,7 +79,7 @@ public partial class SzamitogepForm : Form
         }
     }
 
-    private void CollectData()
+    private void CollectData() //adatok összegyűjtése
     {
         model.Azonosito = textBoxAzonosito.Text;
         model.Processzor = textBoxProcesszor.Text;
@@ -94,7 +94,7 @@ public partial class SzamitogepForm : Form
         model.AllapotElnevezes = comboBoxAllapot.Text;
     }
 
-    private void PutDataInControls()
+    private void PutDataInControls()// meglévő adatokkal feltöltés
     {
         textBoxAzonosito.Text= model.Azonosito;
         textBoxProcesszor.Text= model.Processzor;
@@ -102,11 +102,11 @@ public partial class SzamitogepForm : Form
         numericTextBoxMemoriaMeret.IntValue = model.MemoriaMerete;
         textBoxHattertarTipus.Text = model.HattertarTipusa;
         numericTextBoxHattertarMeret.IntValue = model.HatertarMerete;
-        textBoxTerem.Text = model.Terem;
         comboBoxAllapot.SelectedValue = model.AllapotId;
-    }
+		textBoxTerem.Text = model.Terem;
+	}
 
-    private void ShowErrors(Dictionary<string, string> errors)
+    private void ShowErrors(Dictionary<string, string> errors) //hibauzenetek kiírása
     {
         labelErrorAzonosito.Text = errors.GetValueOrDefault(nameof(SzamitogepViewModel.Azonosito));
         labelErrorProcesszor.Text = errors.GetValueOrDefault(nameof(SzamitogepViewModel.Processzor));
@@ -118,7 +118,7 @@ public partial class SzamitogepForm : Form
         labelErrorAllapot.Text = errors.GetValueOrDefault(nameof(SzamitogepViewModel.AllapotId));
     }
 
-    private bool IsSzamitogepExists()
+    private bool IsSzamitogepExists() //ellenörzés hogy az azonosító már létezike
     {
         using AppDbContext context = new AppDbContext();
         int db = context.Szamitogepek.Count(x => x.Id != model.Id && x.Azonosito.ToLower() == model.Azonosito.ToLower());
@@ -132,7 +132,7 @@ public partial class SzamitogepForm : Form
         return false;
     }
 
-    private void AddSzamitogep()
+    private void AddSzamitogep() //számítógép hozzáadása
     {
         CollectData();
         ModelValidationResult validationResult = model.Validate();
@@ -164,7 +164,7 @@ public partial class SzamitogepForm : Form
         }
     }
 
-    private void UpdateSzamitogep()
+    private void UpdateSzamitogep() //számítógép módosítása
     {
         CollectData();
 
@@ -198,7 +198,7 @@ public partial class SzamitogepForm : Form
         }
     }
 
-    private void OK_Click(object sender, EventArgs e)
+    private void OK_Click(object sender, EventArgs e) //ok gombra kattintáskor lefut a megfelelő függvény
     {
         action();
     }

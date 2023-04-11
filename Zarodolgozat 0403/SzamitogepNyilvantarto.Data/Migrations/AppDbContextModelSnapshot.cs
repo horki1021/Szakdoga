@@ -135,7 +135,8 @@ namespace SzamitogepNyilvantarto.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("JavitasLeiras")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("Terem")
                         .IsRequired()

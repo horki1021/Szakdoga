@@ -37,10 +37,9 @@
 			// 
 			// buttonOK
 			// 
-			this.buttonOK.Location = new System.Drawing.Point(72, 91);
-			this.buttonOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.buttonOK.Location = new System.Drawing.Point(82, 121);
 			this.buttonOK.Name = "buttonOK";
-			this.buttonOK.Size = new System.Drawing.Size(103, 22);
+			this.buttonOK.Size = new System.Drawing.Size(118, 29);
 			this.buttonOK.TabIndex = 0;
 			this.buttonOK.Text = "Bejelentkezés";
 			this.buttonOK.UseVisualStyleBackColor = true;
@@ -49,57 +48,54 @@
 			// labelFehasznaloNev
 			// 
 			this.labelFehasznaloNev.AutoSize = true;
-			this.labelFehasznaloNev.Location = new System.Drawing.Point(10, 7);
+			this.labelFehasznaloNev.Location = new System.Drawing.Point(11, 9);
 			this.labelFehasznaloNev.Name = "labelFehasznaloNev";
-			this.labelFehasznaloNev.Size = new System.Drawing.Size(87, 15);
+			this.labelFehasznaloNev.Size = new System.Drawing.Size(109, 20);
 			this.labelFehasznaloNev.TabIndex = 1;
 			this.labelFehasznaloNev.Text = "Felhasználónév";
 			// 
 			// textBoxFelhsznaloNev
 			// 
-			this.textBoxFelhsznaloNev.Location = new System.Drawing.Point(143, 4);
-			this.textBoxFelhsznaloNev.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.textBoxFelhsznaloNev.Location = new System.Drawing.Point(163, 5);
 			this.textBoxFelhsznaloNev.Name = "textBoxFelhsznaloNev";
-			this.textBoxFelhsznaloNev.Size = new System.Drawing.Size(110, 23);
+			this.textBoxFelhsznaloNev.Size = new System.Drawing.Size(125, 27);
 			this.textBoxFelhsznaloNev.TabIndex = 2;
 			// 
 			// textBoxJelszo
 			// 
-			this.textBoxJelszo.Location = new System.Drawing.Point(143, 49);
-			this.textBoxJelszo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.textBoxJelszo.Location = new System.Drawing.Point(163, 65);
 			this.textBoxJelszo.Name = "textBoxJelszo";
 			this.textBoxJelszo.PasswordChar = '*';
-			this.textBoxJelszo.Size = new System.Drawing.Size(110, 23);
+			this.textBoxJelszo.Size = new System.Drawing.Size(125, 27);
 			this.textBoxJelszo.TabIndex = 4;
 			// 
 			// labelJelszo
 			// 
 			this.labelJelszo.AutoSize = true;
-			this.labelJelszo.Location = new System.Drawing.Point(10, 51);
+			this.labelJelszo.Location = new System.Drawing.Point(11, 68);
 			this.labelJelszo.Name = "labelJelszo";
-			this.labelJelszo.Size = new System.Drawing.Size(37, 15);
+			this.labelJelszo.Size = new System.Drawing.Size(48, 20);
 			this.labelJelszo.TabIndex = 3;
 			this.labelJelszo.Text = "Jelszó";
 			// 
 			// BejelentkezesForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(312, 139);
+			this.ClientSize = new System.Drawing.Size(354, 175);
 			this.ControlBox = false;
 			this.Controls.Add(this.textBoxJelszo);
 			this.Controls.Add(this.labelJelszo);
 			this.Controls.Add(this.textBoxFelhsznaloNev);
 			this.Controls.Add(this.labelFehasznaloNev);
 			this.Controls.Add(this.buttonOK);
-			this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.MaximizeBox = false;
-			this.MaximumSize = new System.Drawing.Size(328, 178);
+			this.MaximumSize = new System.Drawing.Size(372, 222);
 			this.MinimizeBox = false;
-			this.MinimumSize = new System.Drawing.Size(328, 178);
+			this.MinimumSize = new System.Drawing.Size(372, 222);
 			this.Name = "BejelentkezesForm";
 			this.ShowInTaskbar = false;
-			this.Text = "Bejelentkezes";
+			this.Text = "Bejelentkezés";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

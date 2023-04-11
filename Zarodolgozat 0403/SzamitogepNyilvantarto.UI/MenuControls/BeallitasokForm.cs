@@ -1,77 +1,65 @@
-﻿using Microsoft.EntityFrameworkCore.Query.Internal;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿namespace SzamitogepNyilvantarto.UI.MenuControls;
 
-namespace SzamitogepNyilvantarto.UI.MenuControls
+public partial class BeallitasokForm : Form
 {
-    public partial class BeallitasokForm : Form
+    public BeallitasokForm()
     {
-        public BeallitasokForm()
+        InitializeComponent();
+        using AppDbContext context = new AppDbContext();
+        Felhasznalo felhasznalo = context.Felhasznalok.First(); //az adatbázisba csak egy felhasználó van
+        if (felhasznalo.DokumentumTipus=="pdf") //rádiógomb beállítása az adatbázisban tárolt adat szerint
         {
-            InitializeComponent();
+            radioButtonPdf.Checked = true;
+        }
+        else
+        {
+            radioButtonDocx.Checked = true;
+        }
+    }
+    
+    private void OnJelszoOKClick(object sender, EventArgs e) //jelszó módosítás
+    {
+        try
+        {
             using AppDbContext context = new AppDbContext();
             Felhasznalo felhasznalo = context.Felhasznalok.First();
-            if (felhasznalo.DokumentumTipus=="pdf")
+            Felhasznalo bejelentkezo = new Felhasznalo(felhasznalo.FelhasznaloNev, textBoxRegi.Text);
+            if (felhasznalo.Jelszo != bejelentkezo.Jelszo)//a rég jelszavak megegyeznek
             {
-                radioButtonPdf.Checked = true;
+                MessageBox.Show("A régi jelszó téves, így a jelszó megváltoztatás meghiúsult.", "Figyelem", MessageBoxButtons.OK);
+                return;
             }
-            else
+            if (textBoxUj.Text != textBoxMégegyszer.Text || textBoxUj.Text == string.Empty)// az új jelszavak nem egyeznek
             {
-                radioButtonDocx.Checked = true;
+                MessageBox.Show("Az új jelszavak nem egyeznek, így a jelszó megváltoztatás meghiúsult.", "Figyelem", MessageBoxButtons.OK);
+                return;
             }
+            felhasznalo.Jelszo = felhasznalo.HashSHA512(textBoxUj.Text);
+            context.Felhasznalok.Update(felhasznalo);//a jelszó elmentése az adatbázisba
+            context.SaveChanges();
+            MessageBox.Show("A jelszó megváltoztatás sikerült.", "Figyelem", MessageBoxButtons.OK);
         }
-        
-        private void OnJelszoOKClick(object sender, EventArgs e)
+        catch (Exception)
         {
-            try
-            {
-                using AppDbContext context = new AppDbContext();
-                Felhasznalo felhasznalo = context.Felhasznalok.First();
-                Felhasznalo bejelentkezo = new Felhasznalo(felhasznalo.FelhasznaloNev, textBoxRegi.Text);
-                if (felhasznalo.Jelszo != bejelentkezo.Jelszo)
-                {
-                    MessageBox.Show("A régi jelszó téves, így a jelszó megváltoztatás meghiúsult.", "Figyelem", MessageBoxButtons.OK);
-                    return;
-                }
-                if (textBoxUj.Text != textBoxMégegyszer.Text || textBoxUj.Text == string.Empty)
-                {
-                    MessageBox.Show("Az új jelszavak nem egyeznek, így a jelszó megváltoztatás meghiúsult.", "Figyelem", MessageBoxButtons.OK);
-                    return;
-                }
-                felhasznalo.Jelszo = felhasznalo.HashSHA512(textBoxUj.Text);
-                context.Felhasznalok.Update(felhasznalo);
-                context.SaveChanges();
-                MessageBox.Show("A jelszó megváltoztatás sikerült.", "Figyelem", MessageBoxButtons.OK);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("A jelszó megváltoztatás nem sikerült.", "Figyelem", MessageBoxButtons.OK);
-            }
+            MessageBox.Show("A jelszó megváltoztatás nem sikerült.", "Figyelem", MessageBoxButtons.OK);
         }
+    }
 
-        private void OnDokumentumOKClick(object sender, EventArgs e)
+    private void OnDokumentumOKClick(object sender, EventArgs e) //dokumentum kiterjesztés változtatás
+    {
+        try
         {
-            try
-            {
-                using AppDbContext context = new AppDbContext();
-                Felhasznalo felhasznalo = context.Felhasznalok.First();
-                felhasznalo.DokumentumTipus = radioButtonDocx.Checked ? "docx" : "pdf";
-                context.Felhasznalok.Update(felhasznalo);
-                context.SaveChanges();
-                MessageBox.Show("Az alapérelmezett fájl kiterjesztés megváltoztatása sikerült", "Figyelem", MessageBoxButtons.OK);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Az alapérelmezett fájl kiterjesztés megváltoztatása nem sikerült", "Figyelem", MessageBoxButtons.OK);
-            }
+            using AppDbContext context = new AppDbContext();
+            Felhasznalo felhasznalo = context.Felhasznalok.First();
+            felhasznalo.DokumentumTipus = radioButtonDocx.Checked ? "docx" : "pdf";
+            context.Felhasznalok.Update(felhasznalo);
+            context.SaveChanges();
+            MessageBox.Show("Az alapérelmezett fájl kiterjesztés megváltoztatása sikerült", "Figyelem", MessageBoxButtons.OK);
         }
+        catch (Exception)
+        {
+            MessageBox.Show("Az alapérelmezett fájl kiterjesztés megváltoztatása nem sikerült", "Figyelem", MessageBoxButtons.OK);
+        }
+    }
 
 	}
-}

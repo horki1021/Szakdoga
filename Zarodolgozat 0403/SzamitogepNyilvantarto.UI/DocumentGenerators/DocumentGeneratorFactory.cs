@@ -1,8 +1,4 @@
-﻿
-
-using SzamitogepNyilvantarto.UI.Enums;
-
-namespace SzamitogepNyilvantarto.UI.DocumentGenerators;
+﻿namespace SzamitogepNyilvantarto.UI.DocumentGenerators;
 
 public static class DocumentGeneratorFactory
 {

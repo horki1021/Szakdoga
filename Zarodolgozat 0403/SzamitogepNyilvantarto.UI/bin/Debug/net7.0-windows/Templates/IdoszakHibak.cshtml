@@ -1,0 +1,67 @@
+﻿@model List<SzamitogepNyilvantarto.Data.Entities.Hiba>
+<html>
+	<head>
+		<style>
+
+		</style>
+	</head>	
+	<body>
+		<table>
+			<tr>
+				<th>
+					Hibás számítógép azonosítója
+				</th>
+				<th>
+					Bejelentés dátuma
+				</th>
+				<th>
+					Hiba leírása
+				</th>
+				<th>
+					Csere számítógép azonosítója
+				</th>
+				<th>
+					Visszakerülés dátuma
+				</th>
+				<th>
+					Javítás leírása
+				</th>
+				<th>
+					Számítógép akkori terme
+				</th>
+				<th>
+					Hiba állapota
+				</th>
+			</tr>
+			@foreach (var hiba in Model)
+			{
+			<tr>
+				<td>
+					@hiba.HibasGep.Azonosito
+				</td>
+				<td>
+					@hiba.BejelentesDatum
+				</td>
+				<td>
+					@hiba.HibaLeiras
+				</td>
+				<td>
+					@hiba.CsereGep?.Azonosito
+				</td>
+				<td>
+					@hiba.VisszakerulesDatum
+				</td>
+				<td>
+					@hiba.JavitasLeiras
+				</td>
+				<td>
+					@hiba.Terem
+				</td>
+				<td>
+					@hiba.Allapot.Elnevezes
+				</td>
+			</tr>
+			}
+		</table>
+	</body>
+</html>

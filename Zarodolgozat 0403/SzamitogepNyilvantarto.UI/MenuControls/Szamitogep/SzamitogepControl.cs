@@ -71,23 +71,6 @@
             form.ShowDialog();
         }
 
-        protected override void OnDeleteClick(object sender, EventArgs e)
-        {
-            SzamitogepViewModel model = (SzamitogepViewModel)adapter.Current;
-            if (model == null)
-            {
-                MessageBox.Show("Jelöljön ki egy számítógépet!", "Figyelem!", MessageBoxButtons.OK);
-                return;
-            }
-            using AppDbContext context = new AppDbContext();
-            SzamitogepNyilvantarto.Data.Entities.Szamitogep entity = context.Szamitogepek.Find(model.Id);
-            context.Szamitogepek.Remove(entity);
-            context.SaveChanges();
-
-            int index = adapter.IndexOf(model);
-            adapter.RemoveAt(index);
-        }
-
         protected override void OnUpdateClick(object sender, EventArgs e)
         {
             SzamitogepViewModel model = (SzamitogepViewModel)adapter.Current;
@@ -99,7 +82,6 @@
             SzamitogepForm form = new SzamitogepForm(model);
             form.ShowDialog();
         }
-
 
         private void OnAddNewSzamitogep(SzamitogepViewModel model)
         {

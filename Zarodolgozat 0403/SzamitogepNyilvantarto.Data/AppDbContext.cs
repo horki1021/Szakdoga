@@ -1,7 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using SzamitogepNyilvantarto.Data.Entities;
-
-namespace SzamitogepNyilvantarto.Data;
+﻿namespace SzamitogepNyilvantarto.Data;
 public class AppDbContext:DbContext
 {
     public DbSet<Allapot> Allapotok { get; set; }
@@ -13,7 +10,6 @@ public class AppDbContext:DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlServer(@"Server = localhost\SQLEXPRESS; Database = SzamitogepDB; Trusted_Connection = True;TrustServerCertificate=True");
-        //optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=SzamitogepDB;Trusted_Connection=True;TrustServerCertificate=True");
         optionsBuilder.UseLazyLoadingProxies();
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)

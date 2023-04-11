@@ -1,12 +1,8 @@
-﻿using RazorLight;
-using System.Reflection;
-using WkHtmlToPdfDotNet;
+﻿namespace SzamitogepNyilvantarto.UI.DocumentGenerators;
 
-namespace SzamitogepNyilvantarto.UI.DocumentGenerators
-{
     public class PdfGenerator:IDocumentGenerator
     {
-        public async Task GenerateDocumentAsync(string templateName, object model, string fileName, WkHtmlToPdfDotNet.Orientation orientation = WkHtmlToPdfDotNet.Orientation.Portrait)
+        public async Task GenerateDocumentAsync(string templateName, object model, string fileName)
         {
                 var rootDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
                 var templateFullPath = Path.Combine(rootDir, "Templates");
@@ -20,7 +16,7 @@ namespace SzamitogepNyilvantarto.UI.DocumentGenerators
                 {
                     GlobalSettings = {
                 ColorMode = ColorMode.Color,
-                Orientation = orientation,
+                Orientation = WkHtmlToPdfDotNet.Orientation.Portrait,
                 PaperSize = PaperKind.A4,
                 Margins = new MarginSettings() { Top = 10 }
             },
@@ -41,4 +37,3 @@ namespace SzamitogepNyilvantarto.UI.DocumentGenerators
                 fileWiter.Write(docArray, 0, docArray.Length);
             }
         }
-    }

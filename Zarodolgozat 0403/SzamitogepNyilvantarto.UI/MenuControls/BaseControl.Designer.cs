@@ -32,7 +32,6 @@
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.buttonAdd = new System.Windows.Forms.ToolStripButton();
             this.buttonUpdate = new System.Windows.Forms.ToolStripButton();
-            this.buttonDelete = new System.Windows.Forms.ToolStripButton();
             this.butonClose = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.dataGridView = new System.Windows.Forms.DataGridView();
@@ -48,7 +47,6 @@
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.buttonAdd,
             this.buttonUpdate,
-            this.buttonDelete,
             this.butonClose,
             this.toolStripSeparator1});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
@@ -76,16 +74,6 @@
             this.buttonUpdate.Size = new System.Drawing.Size(29, 30);
             this.buttonUpdate.Text = "Módosít";
             this.buttonUpdate.Click += new System.EventHandler(this.OnUpdateClick);
-            // 
-            // buttonDelete
-            // 
-            this.buttonDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.buttonDelete.Image = ((System.Drawing.Image)(resources.GetObject("buttonDelete.Image")));
-            this.buttonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(29, 30);
-            this.buttonDelete.Text = "Töröl";
-            this.buttonDelete.Click += new System.EventHandler(this.OnDeleteClick);
             // 
             // butonClose
             // 
@@ -155,7 +143,6 @@
             private ToolStrip toolStrip;
             private ToolStripButton buttonAdd;
             private ToolStripButton buttonUpdate;
-            private ToolStripButton buttonDelete;
             private ToolStripButton butonClose;
             private ToolStripSeparator toolStripSeparator1;
             private Panel panel;

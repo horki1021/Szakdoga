@@ -21,7 +21,7 @@ public class Szamitogep
     public string MemoriaTipusa { get; set; }
 
     [Required(ErrorMessage = "Kötelező megadni!")]
-    [Range(4,32)]
+    [Range(4,32, ErrorMessage ="4 és 32 közötti egész szám. (GB)")]
     public int MemoriaMerete { get; set;}
 
     [Required(ErrorMessage = "Kötelező megadni!")]

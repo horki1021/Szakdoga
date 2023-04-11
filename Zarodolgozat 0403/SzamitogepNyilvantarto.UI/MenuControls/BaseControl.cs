@@ -15,9 +15,6 @@
         protected virtual void OnUpdateClick(object sender, EventArgs e)
         { }
 
-        protected virtual void OnDeleteClick(object sender, EventArgs e)
-        { }
-
         protected virtual void OnCloseClick(object sender, EventArgs e)
         {
             MainForm form = (MainForm)this.Parent!;
