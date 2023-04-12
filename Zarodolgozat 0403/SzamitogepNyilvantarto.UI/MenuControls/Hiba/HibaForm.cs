@@ -373,5 +373,4 @@ public partial class HibaForm : Form
     {
         action();
     }
-
 }
